@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>title</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+			overflow: hidden;
+		}
+		img {
+			width: 100vw;
+			height: 100vh;
+		}
+	</style>
+	</head>
+	<body id="body">
+		<img src="image.png">
+		<script type="text/javascript">
+			var z = 1;
+			function yolo() {
+				var img = document.createElement('img');
+				var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+				var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+				//console.log(w,h)
+				var x = Math.floor(Math.random() * w);
+				var y = Math.floor(Math.random() * h);
+				console.log(x,y)
+				w = Math.min(w-x, Math.floor(Math.random() * 100)+10);
+				h = Math.min(h-y, Math.floor(Math.random() * 100)+10);
+				//w = h = 100;
+				img.src = 'Untitled.png';
+				img.style.zIndex = z++;
+				img.style.position = 'absolute';
+				img.style.left = x+'px';
+				img.style.top = y+'px';
+				img.style.width = w+'px';
+				img.style.height = h+'px';
+				document.getElementById('body').appendChild(img);
+			}
+			function autorun() {
+				setInterval(yolo, 303);
+			}
+			if (document.addEventListener) document.addEventListener("DOMContentLoaded", autorun, false);
+			else if (document.attachEvent) document.attachEvent("onreadystatechange", autorun);
+			else window.onload = autorun;
+		</script>
+	</body>
+</html>
