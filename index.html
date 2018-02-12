@@ -28,8 +28,8 @@
 				var x = Math.floor(Math.random() * w);
 				var y = Math.floor(Math.random() * h);
 				console.log(x,y)
-				w = Math.min(w-x, Math.floor(Math.random() * 100)+10);
-				h = Math.min(h-y, Math.floor(Math.random() * 100)+10);
+				w = Math.min(w-x, Math.floor(Math.random() * 332));
+				h = Math.min(h-y, Math.floor(Math.random() * 90));
 				//w = h = 100;
 				img.src = 'Untitled.png';
 				img.style.zIndex = z++;
@@ -41,7 +41,7 @@
 				document.getElementById('body').appendChild(img);
 			}
 			function autorun() {
-				setInterval(yolo, 303);
+				setInterval(yolo, 404);
 			}
 			if (document.addEventListener) document.addEventListener("DOMContentLoaded", autorun, false);
 			else if (document.attachEvent) document.attachEvent("onreadystatechange", autorun);
